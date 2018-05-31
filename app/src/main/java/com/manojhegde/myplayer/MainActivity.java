@@ -34,8 +34,8 @@ public class MainActivity extends AppCompatActivity {
         final ListView myListView=(ListView)findViewById(R.id.listView);
         ArrayList<String>myStringFileList=new ArrayList<String>();
 
-        root = new File(Environment.getExternalStorageDirectory().getPath());
-
+        root = new File(Environment.getExternalStorageDirectory().getParent());
+        Log.i("StoragePath",root.getPath());
         fileList=getfile(root);
         for (int i = 0; i < fileList.size(); i++) {
             myStringFileList.add(fileList.get(i).getName());
